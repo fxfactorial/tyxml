@@ -238,9 +238,11 @@ struct
 
   let a_width p = int_attrib "width" p
 
-  let a_for = string_attrib "for"
+  let a_label_for = string_attrib "for"
+  let a_for = a_label_for
 
-  let a_for_list = space_sep_attrib "for"
+  let a_output_for = space_sep_attrib "for"
+  let a_for_list = a_output_for
 
   let a_selected x =
     user_attrib C.string_of_big_variant "selected" x

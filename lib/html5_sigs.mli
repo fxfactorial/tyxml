@@ -366,9 +366,15 @@ module type T = sig
 
   val a_enctype : contenttype wrap -> [> | `Enctype] attrib
 
-  val a_for : idref wrap -> [> | `For] attrib
+  val a_label_for : idref wrap -> [> | `Label_for] attrib
 
-  val a_for_list : idrefs wrap -> [> | `For_List] attrib
+  val a_for : idref wrap -> [> | `Label_for] attrib
+  (** @deprecated Use a_label_for *)
+
+  val a_output_for : idrefs wrap -> [> | `Output_for] attrib
+
+  val a_for_list : idrefs wrap -> [> | `Output_for] attrib
+  (** @deprecated Use a_output_for *)
 
   val a_maxlength : number wrap -> [> | `Maxlength] attrib
 
